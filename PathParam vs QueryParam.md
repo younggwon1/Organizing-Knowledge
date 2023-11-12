@@ -62,5 +62,4 @@ QueryParameters는 다음의 Method 에서 사용할 수 있다.
 참고 문서
 
 1. [[API] Path parameter VS Query Parameter (기록용)](https://velog.io/@juno97/API-Path-parameter-VS-Query-Parameter-%EA%B8%B0%EB%A1%9D%EC%9A%A9)
-2. [Spring @PathVariable and @RequestParam](Spring @PathVariable and @RequestParam)
-3. [[번역] Path Variable과 Query Parameter는 언제 사용해야 할까?]([번역] Path Variable과 Query Parameter는 언제 사용해야 할까?)
+2. [[Java/SpringBoot] @RequestParam vs @PathVariable 쓰임새, 사용법, 차이점](https://velog.io/@dongscholes/JavaSpringBoot-RequestParam-vs-PathVariable-%EC%93%B0%EC%9E%84%EC%83%88-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%B0%A8%EC%9D%B4%EC%A0%90)
