@@ -15,5 +15,7 @@ with:
 ```
 
 https://docs.docker.com/build/ci/github-actions/multi-platform/
+
 https://github.com/marketplace/actions/build-and-publish-multi-platform-docker-images
+
 https://thearchivelog.dev/article/building-a-multi-platform-image-with-github-actions/
