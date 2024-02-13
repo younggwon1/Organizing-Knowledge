@@ -1,6 +1,6 @@
 # Amazon MSK 고가용성 유지
 
-###1. Amazon MSK Version Upgrade 시 고가용성 유지
+### 1. Amazon MSK Version Upgrade 시 고가용성 유지
 
 [고가용성 모범 사례](https://docs.aws.amazon.com/ko_kr/msk/latest/developerguide/bestpractices.html#ensure-high-availability)
 
