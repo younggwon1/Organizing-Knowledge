@@ -1,8 +1,8 @@
 # Amazon MSK 고가용성 유지
 
-###1. Amazon MSK Version Upgrade 시 고가용성 유지
+### 1. Amazon MSK Version Upgrade 시 고가용성 유지
 
-[고가용성 모범 사례]([https://docs.aws.amazon.com/ko_kr/msk/latest/developerguide/bestpractices.html#ensure-high-availability ](https://docs.aws.amazon.com/ko_kr/msk/latest/developerguide/bestpractices.html#ensure-high-availability))
+[고가용성 모범 사례](https://docs.aws.amazon.com/ko_kr/msk/latest/developerguide/bestpractices.html#ensure-high-availability)
 
 > Amazon MSK 버전 업그레이드는 한 번에 하나의 브로커를 오프라인으로 전환하는 rolling 업데이트 프로세스를 통해 배포하므로 MSK의 가용성과 내구성을 유지합니다. 
 >
@@ -31,7 +31,7 @@
 
 **MinISR**은 최소 동기화 내 복제본 수로 쓰기가 성공한 것으로 간주되기 위해 만족해야 하는 복제본의 수이다. 이는 최대 RF - 1로 설정한다. 클러스터가 2-AZ로만 배포되므로 이 값을 1 (RF-1, 즉 2-1 = 1) 로 설정할 수 있다.
 
-> 런타임에서 RF와 minISR 변경은 downtime이 없다. 그러나 [클러스터 전체 구성 변경]([https://docs.aws.amazon.com/ko_kr/msk/latest/developerguide/msk-configuration-properties.html ](https://docs.aws.amazon.com/ko_kr/msk/latest/developerguide/msk-configuration-properties.html))을 진행하는 경우 rolling update로 인한 일부 성능 저하가 발생할 수 있다.
+> 런타임에서 RF와 minISR 변경은 downtime이 없다. 그러나 [클러스터 전체 구성 변경](https://docs.aws.amazon.com/ko_kr/msk/latest/developerguide/msk-configuration-properties.html)을 진행하는 경우 rolling update로 인한 일부 성능 저하가 발생할 수 있다.
 
 가용 영역에 장애가 발생 시 다운 타임과 가용성 측면에서 2-AZ(RF : 2) 는 3-AZ(RF-3) 보다 데이터 손실 가능성이 높다. 
 
