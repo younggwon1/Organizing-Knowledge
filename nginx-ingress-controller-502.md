@@ -1,11 +1,11 @@
 ## 이슈
-nginx ingress contoller pod 이 죽을 경우 nginx ingress controller 를 통해 트래픽이 들어오는 a 라는 서비스에 접속 시 502 error 가 발생
+> nginx ingress contoller pod 이 죽을 경우 nginx ingress controller 를 통해 트래픽이 들어오는 a 라는 서비스에 접속 시 502 error 가 발생
 ( ALB -> (Target Group Binding) -> nginx ingress controller -> ingress -> service -> pod )
 
 ## 해결
 > nginx ingress controller 설정에 minReadySeconds , preStop , terminationGracePeriodSeconds 를 활용하여 해결
 
-minReadySeconds
+**minReadySeconds**
 > pod의 준비 상태를 확인하는 데 사용되는 설정
 - pod이 Ready 상태가 되기까지 최소 기다리는 시간을 지정해주며, 설정된 시간동안 트래픽을 받지 않는다.
 - minReadySeconds 는 readinessProbe 와 동일한 시간으로 맞춰 설정한다.
@@ -13,7 +13,7 @@ minReadySeconds
 - why?
 - readinessProbe가 완료되면 .spec.minReadySeconds에 설정된 시간이 아직 남아 있더라고도 무시되고 트래픽을 보냄
 
-preStop
+**preStop**
 > 컨테이너가 종료되기 직전에 실행되는 Hook
 - terminationGracePeriodSeconds만으로 Graceful shotdown 을 보장하기 어렵다. 따라서 preStop 기능을 같이 사용한다.
 - terminationGracePeriodSeconds은 preStop과 병렬이기 때문에 최소한 preStop 소요 시간보다 더 길게 설정해야 한다. ( terminationGracePeriodSeconds > preStop )
