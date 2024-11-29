@@ -1,20 +1,22 @@
-# Pod CPU/Memory 리소스
+# Pod CPU / Memory 리소스
 
 > [파드](https://kubernetes.io/ko/docs/concepts/workloads/pods/)를 지정할 때, [컨테이너](https://kubernetes.io/ko/docs/concepts/containers/)에 필요한 각 리소스의 양을 선택적으로 지정할 수 있다. 지정할 가장 일반적인 리소스는 CPU와 메모리(RAM) 그리고 다른 것들이 있다.
 >
-> 컨테이너에 대한 리소스 *요청(**request**)* 을 지정하면, [kube-scheduler](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-scheduler/)는 이 정보를 사용하여 파드가 배치될 노드를 결정한다. 또한 kubelet은 request에 명시한 resource만큼을 해당 Container가 사용할 수 있도록 미리 예약을 해둔다.
+> 컨테이너에 대한 리소스 _요청(**request**)_ 을 지정하면, [kube-scheduler](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-scheduler/)는 이 정보를 사용하여 파드가 배치될 노드를 결정한다. 또한 kubelet은 request에 명시한 resource만큼을 해당 Container가 사용할 수 있도록 미리 예약을 해둔다.
 >
-> 컨테이너에 대한 리소스 *제한(**limit**)* 을 지정하면, kubelet은 실행 중인 컨테이너가 설정한 제한보다 많은 리소스를 사용할 수 없도록 해당 제한을 적용한다.
-
-
+> 컨테이너에 대한 리소스 _제한(**limit**)_ 을 지정하면, kubelet은 실행 중인 컨테이너가 설정한 제한보다 많은 리소스를 사용할 수 없도록 해당 제한을 적용한다.
 
 ### Request & Limit
 
+> 참고, HPA는 Request를 기준으로 동작한다.
+
 파드가 실행 중인 노드에 사용 가능한 리소스가 충분(남은 리소스가 충분하다면..)하면, 컨테이너가 해당 리소스에 지정한 `request` 보다 더 많은 리소스를 사용할 수 있도록 허용된다. 그러나, 컨테이너는 리소스 `limit` 보다 더 많은 리소스를 사용할 수는 없다.
+
+다시 정리하면, Request를 정의하면 kube-schedule은 pod가 배치될 Node를 결정한다. 이때 Node를 결정할 때 Round Robin 방식으로 어떤 Node에 배치할지를 찾는다. 만약 할당할 Node가 없다면, Pod의 상태는 Pending 상태가 된다.
 
 - 예를 들어, 컨테이너에 대해 256MiB의 `memory` 요청을 설정하고, 해당 컨테이너가 8GiB의 메모리를 가진 노드로 스케줄된 파드에 있고 다른 파드는 없는 경우, 컨테이너는 더 많은 RAM을 사용할 수 있다.
 
-해당 컨테이너에 대해 4GiB의 `memory` 제한을 설정하면, kubelet(그리고 [컨테이너 런타임](https://kubernetes.io/ko/docs/setup/production-environment/container-runtimes/))이 제한을 적용한다. 런타임은 컨테이너가 구성된 리소스 제한을 초과하여 사용하지 못하게 한다. 
+해당 컨테이너에 대해 4GiB의 `memory` Limit을 설정하면, kubelet(그리고 [컨테이너 런타임](https://kubernetes.io/ko/docs/setup/production-environment/container-runtimes/))이 제한을 적용한다. 런타임은 컨테이너가 구성된 리소스 제한을 초과하여 사용하지 못하게 한다.
 
 - 예를 들어, 컨테이너의 프로세스가 허용된 양보다 많은 메모리를 사용하려고 하면, 시스템 커널은 메모리 부족(out of memory, OOM) 오류와 함께 할당을 시도한 프로세스를 종료한다.
 
@@ -22,29 +24,25 @@
 
 만약 Container에 메모리 limit은 설정했는데 request 값을 설정하지 않았다면, Kubernetes는 자동으로 limit에 설정한 값만큼 request 값을 설정한다. 이는 CPU에 대해서도 마찬가지이다.
 
-
-
 ### Resources in Kubernetes
 
 **CPU**
 
-CPU에 대한 request와 limit 값은 cpu unit이라는 단위를 가진다. 
+CPU에 대한 request와 limit 값은 cpu unit이라는 단위를 가진다.
 
-1 cpu는 Kubernetes에서 1vCPU/Core로 생각할 수 있다. 
+1 cpu는 Kubernetes에서 1vCPU/Core로 생각할 수 있다.
 
 만약 0.5라는 값으로 설정한다면 이는 500m와 같은 값을 나타내며 500 밀리 cpu를 가진다고 생각할 수 있다.
 
 그리고 이 값은 상대적인 값이 아니다. 무슨 말이냐면 single-core나 dual-core를 가진 node에 0.5이라는 CPU request, limit 값을 설정한다면 코어의 수에 따라 비례하는 값이 아니라 두 개의 node에 대해서 동일한 CPU를 할당한다는 뜻이다.
 
-
 **Memory**
 
-Memory 대한 request와 limit 값은 바이트 단위를 가진다. 
+Memory 대한 request와 limit 값은 바이트 단위를 가진다.
 
-이 값은 정수로 나타내야하며 숫자 뒤에 E, P, T, G, M, K와 같은 접미어가 붙을 수도 있다. 
+이 값은 정수로 나타내야하며 숫자 뒤에 E, P, T, G, M, K와 같은 접미어가 붙을 수도 있다.
 
 각각은 Ei, Pi, Ti, Gi, Mi, Ki와 동일한 의미를 가진다.
-
 
 각 컨테이너에 대해, 다음과 같은 리소스 제한(limit) 및 요청(request)을 지정할 수 있다.
 
@@ -53,23 +51,28 @@ Memory 대한 request와 limit 값은 바이트 단위를 가진다.
 - `spec.containers[].resources.requests.cpu`
 - `spec.containers[].resources.requests.memory`
 
-
-
 ### How Pods with resource limits are run
 
-Pod에 설정된 resource request와 limit이 어떻게 영향을 미치는지를 알아보기 위해서는 **Compressible/Incompressible resource**에 대해서 아는 것이 도움이 된다.
+Pod에 설정된 resource request와 limit이 어떻게 영향을 미치는지를 알아보기 위해서는 **Compressible / Incompressible resource**에 대해서 아는 것이 도움이 된다.
 
-Kubernetes에서 Comressible한 resource 중 대표적인 것은 바로 CPU이다. Compressible resource는 Pod이 그 값을 초과하려고 하면 자신이 사용할 수 있는 resource에 한계가 있기 때문에 병목이 걸린다. 왜냐하면 필요한 값보다 자신이 사용할 수 있는 resource가 적기 때문이다.
+Kubernetes에서 Compressible한 resource 중 대표적인 것은 바로 CPU이다. Compressible resource는 Pod이 그 값을 초과하려고 하면 자신이 사용할 수 있는 resource에 한계가 있기 때문에 병목이 걸린다. 왜냐하면 필요한 값보다 자신이 사용할 수 있는 resource가 적기 때문이다.
 
 반면에 Incompressible resource에 대표적인 것 중 하나는 메모리가 있는데 Incompressible resource의 경우는 Pod이 그 사용량을 초과하려고하면 해당 Pod 내부 컨테이너의 커널에 의해 killed된다.
+
+-> 조금 더 정리하자면 다음과 같다.
+
+- Request량을 초과한다면?
+
+  > Node의 자원이 충분할 경우 Request량을 초과하여도 Limit량을 넘지 않으면 문제 없다. 하지만 Node의 자원이 부족할 경우에 Request량을 초과한 Pod는 퇴거(eviction) 대상이 된다. 그 이유는 자원이 부족한 Node에서 다른 Node로 재배치하기 위함이다.
+
+- Limit량을 초과한다면?
+  > CPU는 Throttling, Memory는 OOM Killed
 
 그래서 이를 정리하면 아래와 같은 상황이 나타날 수 있다.
 
 - 만약 Container가 자신에게 설정된 메모리 limit보다 그 사용량을 초과했을 때 해당 Container는 종료될 수 있다. 만약 다시 시작할 수 있다면 kubelet은 해당 Container를 다시 실행시킨다.
 - 만약 Container가 자신에게 설정된 메모리 request보다 그 사용량을 초과했을 때 Container는 자신이 배정된 node의 메모리가 부족하면 evicted된다.
 - 만약 Container 자신에게 설정된 CPU limit을 특정 시간 이상 동안 넘는다하더라도 해당 Container는 죽지 않는다.
-
-
 
 # QoS
 
@@ -83,7 +86,7 @@ Kubernetes에서 Comressible한 resource 중 대표적인 것은 바로 CPU이�
 
   - **BestEffort**
 
-    - request, limit을 명시하지 않은 Pod은 BestEffort QoS를 가진다. 
+    - request, limit을 명시하지 않은 Pod은 BestEffort QoS를 가진다.
 
     - request, limit을 명시하지 않으면 scheduler는 해당 Pod을 어떤 node에 scheduling 해야할지 알지 못한다. scheduler는 추측해서 해당 Pod을 띄울 수밖에 없다.
 
@@ -108,23 +111,18 @@ Kubernetes에서 Comressible한 resource 중 대표적인 것은 바로 CPU이�
   - **Guranteed**
 
     - Guranteed QoS는 request, limit resource 값을 설정했고 limit 값이 request 값이 같을 때 설정된다.
-    - 가장 경제적 비용이 크지만 가장 안정적으로 서비스를 운영할 수 있는 방법이다. 
+    - 가장 경제적 비용이 크지만 가장 안정적으로 서비스를 운영할 수 있는 방법이다.
     - request, limit 값이 같기 때문에 피크 타임 때도 어떤 서비스가 최대 얼마만큼 resource를 사용할지에 대한 정확한 예측이 가능하다. 또한 다른 서비스의 resource starvation 문제도 완전히 없애준다.
     - 한 가지 주의해야할 점이 있다면 Kubernetes 컨텍스트 바깥에서 동작하는 서비스의 resource는 고려되지 않는 다는 것이다. 어떤 말이냐면 Compute Engine 자체에서 돌고 있는 모니터링 툴이라던가 native하게 돌고 있는 프로그램이 사용하는 resource 자원은 Kubernetes 클러스터 단에서 알 수가 없다.
 
-|                  | Pod Resource 설정  | **우선순위**(높을수록 오래 살아남음) |
-| ---------------- | ---------------- | ---------------------- |
-| BestEffort Class | 설정하지 않음          | 3                      |
-| Burstable Class  | Request < Limit  | 2                      |
-| Guranteed Class  | Request == Limit | 1                      |
+|                  | Pod Resource 설정 | **우선순위**(높을수록 오래 살아남음) |
+| ---------------- | ----------------- | ------------------------------------ |
+| BestEffort Class | 설정하지 않음     | 3                                    |
+| Burstable Class  | Request < Limit   | 2                                    |
+| Guranteed Class  | Request == Limit  | 1                                    |
 
+### 참고 문서
 
-
-
-
-
-
-참고 문서
 [Kubernetes Resource and QoS Concept](https://www.getoutsidedoor.com/2020/11/15/kubernetes-resource-and-qos/)
 
 [리소스 요청이 포함된 파드를 스케줄링하는 방법](https://kubernetes.io/ko/docs/concepts/configuration/manage-resources-containers/#%EB%A6%AC%EC%86%8C%EC%8A%A4-%EC%9A%94%EC%B2%AD%EC%9D%B4-%ED%8F%AC%ED%95%A8%EB%90%9C-%ED%8C%8C%EB%93%9C%EB%A5%BC-%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95)
