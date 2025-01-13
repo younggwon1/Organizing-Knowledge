@@ -23,6 +23,7 @@ Network
 
 Observability
 - Observability (Metric, Log, Alert, Trace, APM) 개발 / 운영
+- 장애 발생 시 근본적인 원인을 파악할 수 있는 직관적인 메트릭을 도출하여, 모든 개발자가 신속하게 장애에 대응할 수 있는 시스템 구축
 
 CI / CD
 - DevSecOps
