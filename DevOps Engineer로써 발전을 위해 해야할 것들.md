@@ -8,10 +8,11 @@
 
 
 Infra
-- 대규모 트래픽 처리가 가능한 서비스 인프라 구성 및 관리
-- Application Troubleshooting
-- 인프라, 시스템, 어플리케이션 이벤트 탐지, 분석, 복구 자동화 시스템 개발
+- 서비스 인프라를 안정적으로 운영하고, 대규모 트래픽 처리가 가능한 서비스 인프라 구성 및 개선
+- 인프라 운영을 자동화해 보다 더 효율적인 인프라 환경 구축
+- 인프라, 시스템, 어플리케이션 문제 발생에 대한 이벤트 탐지, 분석, 복구 자동화 시스템 개발
 - 컨테이너의 자원 할당량 최적화 및 최적화된 상태 유지
+- Application Troubleshooting
 - Kubernetes
 - Istio
 
@@ -22,8 +23,9 @@ Network
 - …
 
 Observability
-- Observability (Metric, Log, Alert, Trace, APM) 개발 / 운영
+- 대규모 서비스 대상의 Observability (Metrics/Events/Logs/Traces 와 Alert, APM) 시스템 개발 / 운영
 - 장애 발생 시 근본적인 원인을 파악할 수 있는 직관적인 메트릭을 도출하여, 모든 개발자가 신속하게 장애에 대응할 수 있는 시스템 구축
+- 인프라 및 서비스의 이상 징후(Anomaly Detection)를 빠르게 탐지하는 시스템 구축
 
 CI / CD
 - DevSecOps
