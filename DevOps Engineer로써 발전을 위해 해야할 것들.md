@@ -24,7 +24,7 @@ Network
 
 Observability
 - 대규모 서비스 대상의 Observability (Metrics/Events/Logs/Traces 와 Alert, APM) 시스템 개발 / 운영
-- 장애 발생 시 근본적인 원인을 파악할 수 있는 직관적인 메트릭을 도출하여, 모든 개발자가 신속하게 장애에 대응할 수 있는 시스템 구축
+- 장애 발생 시 근본적인 원인을 파악할 수 있는 직관적인 Observability를 도출하여, 모든 개발자가 신속하게 장애에 대응할 수 있는 시스템 구축
 - 인프라 및 서비스의 이상 징후(Anomaly Detection)를 빠르게 탐지하는 시스템 구축
 
 CI / CD
@@ -34,5 +34,8 @@ CI / CD
 - 코드 품질 향상을 위한 환경 및 서비스 구축
 
 개발 (자동화 Tool)
+- DevOps
+- Infra
+- ...
 
 비용 절감 (FinOps)
