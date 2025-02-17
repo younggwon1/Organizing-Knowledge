@@ -1,7 +1,3 @@
----
-marp: true
----
-
 # CoreDNS 이슈 정리
 
 ## 상황
@@ -22,10 +18,12 @@ CoreDNS 의 Log에는 다음의 **i/o timeout** ERROR가 발생하였습니다.
 ## 원인 추측
 
 > 1. CoreDNS CPU 사용량이 설정된 Request(100m) 보다 많아 CPU Throttling 이 발생하여 지연이 되는 것으로 추측
->    https://github.com/coredns/coredns/issues/4544#issuecomment-848751210
+>
+> - https://github.com/coredns/coredns/issues/4544#issuecomment-848751210
 
 > 2. CoreDNS 의 PPS를 넘어가 발생한 문제로 추측
->    https://github.com/coredns/deployment/blob/master/kubernetes/Scaling_CoreDNS.md
+>
+> - https://github.com/coredns/deployment/blob/master/kubernetes/Scaling_CoreDNS.md
 
 ## 파악
 
@@ -53,9 +51,9 @@ histogram_quantile(0.99, sum(rate(coredns_dns_request_duration_seconds_bucket{in
 the hard limit of **1024** packets per second (PPS) set at the ENI level
 ```
 
-[Everything you need to know about monitoring CoreDNS for DNS performance](https://dev.to/aws-builders/everything-you-need-to-know-about-monitoring-coredns-for-dns-performance-5hi9)
-[Monitor CoreDNS traffic for DNS throttling issues](https://aws.github.io/aws-eks-best-practices/ko/networking/monitoring/)
-[Monitoring CoreDNS for DNS throttling issues using AWS Open source monitoring services](https://aws.amazon.com/ko/blogs/mt/monitoring-coredns-for-dns-throttling-issues-using-aws-open-source-monitoring-services/)
+- [Everything you need to know about monitoring CoreDNS for DNS performance](https://dev.to/aws-builders/everything-you-need-to-know-about-monitoring-coredns-for-dns-performance-5hi9)
+- [Monitor CoreDNS traffic for DNS throttling issues](https://aws.github.io/aws-eks-best-practices/ko/networking/monitoring/)
+- [Monitoring CoreDNS for DNS throttling issues using AWS Open source monitoring services](https://aws.amazon.com/ko/blogs/mt/monitoring-coredns-for-dns-throttling-issues-using-aws-open-source-monitoring-services/)
 
 ```
 # AWS 측에서 다음의 답변을 받음

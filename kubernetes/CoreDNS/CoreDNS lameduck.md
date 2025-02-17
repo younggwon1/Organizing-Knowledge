@@ -1,7 +1,3 @@
----
-marp: true
----
-
 # CoreDNS lameduck 정리
 
 > Pod는 Name 확인을 위해 `kube-dns` 서비스를 사용합니다. Kubernetes는 Destination NAT(DNAT)를 사용하여 `kube-dns` 트래픽을 Node에서 CoreDNS Pod로 리디렉션합니다.
@@ -23,7 +19,8 @@ marp: true
 ## Setting
 
 > EKS Add ON으로 CoreDNS를 사용한다면, 다음과 같이 Corefile을 수정합니다. (lameduck을 5s -> 30s 변경)
-> 참고 문서
+
+참고 문서
 
 - https://aws.amazon.com/ko/blogs/containers/amazon-eks-add-ons-advanced-configuration/
 
