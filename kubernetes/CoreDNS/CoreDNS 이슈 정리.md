@@ -95,7 +95,51 @@ dig +trace <DOMAIN>
 
 2. max_concurrent : none (default) -> 1000
 
-- coredns 소스코드 레포에는 명시적으로 있으나 EKS Addon 버전에는 없음
+- 다음과 같이 반영
+
+```
+## AS-IS
+> cache : 30s, max_concurrent : none
+.:53 {
+    errors
+    health {
+        lameduck 5s
+      }
+    ready
+    kubernetes cluster.local in-addr.arpa ip6.arpa {
+      pods insecure
+      fallthrough in-addr.arpa ip6.arpa
+    }
+    prometheus :9153
+    forward . /etc/resolv.conf
+    cache 30
+    loop
+    reload
+    loadbalance
+}
+
+## TO-BE
+> cache : 60s, max_concurrent : 1000
+.:53 {
+    errors
+    health {
+        lameduck 5s
+      }
+    ready
+    kubernetes cluster.local in-addr.arpa ip6.arpa {
+      pods insecure
+      fallthrough in-addr.arpa ip6.arpa
+    }
+    prometheus :9153
+    forward . /etc/resolv.conf {
+      max_concurrent 1000
+    }
+    cache 60
+    loop
+    reload
+    loadbalance
+}
+```
 
 3. lameduck
 
@@ -113,6 +157,27 @@ dig +trace <DOMAIN>
   - **PPS**
   - **QPS**
   - ...
+- Monitoring 설정
+  - http://docs.aws.amazon.com/ko_kr/eks/latest/best-practices/monitoring_eks_workloads_for_network_performance_issues.html
+  - https://aws.github.io/aws-eks-best-practices/ko/networking/monitoring/
+  - https://aws.amazon.com/ko/blogs/mt/monitoring-coredns-for-dns-throttling-issues-using-aws-open-source-monitoring-services/
+  - https://dev.to/aws-builders/everything-you-need-to-know-about-monitoring-coredns-for-dns-performance-5hi9
+
+> 모니터링 할 EKS NODE(EC2)에 Elastic Network Adapter 활성화가 되어 있어야 모니터링이 가능합니다.
+
+```
+$ ethtool -i eth0
+driver: ena <- 이렇게 되어있으면 ENA 활성화가 된 것입니다.
+version: 2.12.3
+firmware-version:
+expansion-rom-version:
+bus-info: 0000:00:05.0
+supports-statistics: yes
+supports-test: no
+supports-eeprom-access: no
+supports-register-dump: no
+supports-priv-flags: yes
+```
 
 ### 참고
 
