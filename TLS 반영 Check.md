@@ -29,4 +29,4 @@ curl: (35) error:1404B42E:SSL routines:ST_CONNECT:tlsv1 alert protocol version
 
 참고 문서
 
-[TLSv1.1_2016 vs TLSv1.2_2021](https://docs.aws.amazon.com/ko_kr/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html)
+- [TLSv1.1_2016 vs TLSv1.2_2021](https://docs.aws.amazon.com/ko_kr/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html)
