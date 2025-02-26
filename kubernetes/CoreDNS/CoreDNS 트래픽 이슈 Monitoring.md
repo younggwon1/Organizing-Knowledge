@@ -88,6 +88,10 @@ rate(node_ethtool_pps_allowance_exceeded{device="eth0"}[5m]) > 0
 - bw_out_allowance_exceeded
 - pps_allowance_exceeded
 
+위의 지표와 관련하여 잘 작성된 문서가 있습니다. 이를 같이 참고하여 파악해보면 좋을 것 같습니다.
+- [문서](https://engineering.doit.com/troubleshooting-aws-network-throttling-a-comprehensive-guide-368811424148)
+
+
 ## 요청
 
 > 위의 지표를 활용하여 어떻게 CoreDNS i/o timeout 트러블슈팅을 하면 좋을지 AWS 측에 문의하였습니다.
