@@ -2,7 +2,7 @@
 
 ## 상황
 
-> 운영중인 Application에서 도메인 질의에 실패한 에러가 발생하여 CoreDNS 로그를 확인해보니 i/o timeout이 발생한 상황입니다.
+> 운영 중인 Application에서 도메인 질의에 실패한 에러가 발생하여 CoreDNS 로그를 확인해보니 i/o timeout이 발생한 상황입니다.
 
 ## 대응
 
@@ -46,9 +46,9 @@ Prometheus ethtool Exporter 배포 시 [prometheus-ethtool-exporter](https://raw
 
 데몬셋으로 배포된 prometheus-node-exporter에서 ethtool collector를 사용하기 위해서는 args 인자에 2가지를 추가해야합니다.
 
-- --collector.ethtool
+- **--collector.ethtool**
   - ethtool collector를 활성화
-- --collector.ethtool.metrics-include=^(bw_in_allowance_exceeded|bw_out_allowance_exceeded|conntrack_allowance_exceeded|linklocal_allowance_exceeded|pps_allowance_exceeded)$
+- **--collector.ethtool.metrics-include=^(bw_in_allowance_exceeded|bw_out_allowance_exceeded|conntrack_allowance_exceeded|linklocal_allowance_exceeded|pps_allowance_exceeded)$**
   - ethtool collector가 수집할 메트릭을 지정하는 정규표현식
 
 ```
