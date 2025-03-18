@@ -89,8 +89,8 @@ rate(node_ethtool_pps_allowance_exceeded{device="eth0"}[5m]) > 0
 - pps_allowance_exceeded
 
 위의 지표와 관련하여 잘 작성된 문서가 있습니다. 이를 같이 참고하여 파악해보면 좋을 것 같습니다.
-- [문서](https://engineering.doit.com/troubleshooting-aws-network-throttling-a-comprehensive-guide-368811424148)
 
+- [문서](https://engineering.doit.com/troubleshooting-aws-network-throttling-a-comprehensive-guide-368811424148)
 
 ## 요청
 
@@ -177,3 +177,5 @@ CoreDNS i/o timeout 의 원인을 추적하기 위해 5가지의 지표들이 �
 - [maxPods](https://kubernetes.io/docs/reference/config-api/kubelet-config.v1beta1/)
 
 - [Amazon EC2 인스턴스 유형](https://aws.amazon.com/ko/ec2/instance-types/)
+
+- [Troubleshooting AWS network throttling: A Comprehensive Guide](https://engineering.doit.com/troubleshooting-aws-network-throttling-a-comprehensive-guide-368811424148)
