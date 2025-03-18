@@ -5,7 +5,7 @@
 
 1. 해당 Node 에는 CoreDNS 가 존재하지 않음
    - 다른 Node 의 CoreDNS 로 DNS Query 요청을 보내야한다는 의미
-2. io.netty.resolver.dns.DnsResolveContext$SearchDomainUnknownHostException 해당 이슈는 운영 서비스 -> kube-dns (service) 로 Domain Name Resolving을 시도하는 부분에서 문제가 발생했을 것으로 추측
+2. `io.netty.resolver.dns.DnsResolveContext$SearchDomainUnknownHostException` 해당 이슈는 운영 서비스 -> kube-dns (service) 로 Domain Name Resolving을 시도하는 부분에서 문제가 발생했을 것으로 추측
    - 어떤 Pod가 DNS Query를 수행하기 위해서는 CoreDNS Pod로 요청을 전송해야하는데 해당 Node 에는 CoreDNS 가 존재하지 않기 때문에 다른 Node 의 CoreDNS 로 DNS Query 요청을 보내야 함
    - 이때 너무 많은 DNS Query 를 수행하게 될 경우 Node 내 패킷 구성에 문제가 발생하여 위와 같은 이슈가 발생할 수 있음
 
@@ -77,7 +77,7 @@ $ tcpdump -i eth0 -vv -nn host {dns service ip}
 그리고 나서 클라이언트 쪽에 nslookup 명령어를 수행하여 패킷을 확인해봅니다.
 
 ```bash
-nslookup {Domain} -debug | grep QUESTIONS -A 1
+$ nslookup {Domain} -debug | grep QUESTIONS -A 1
 ```
 
 결과
