@@ -163,7 +163,7 @@ options ndots:2
 ```
 
 ### 결과
-
+#### ndots 2
 1. CoreDNS로의 요청량이 줄었습니다.
 
    - 특히 A, AAAA 레코드에 대한 요청이 줄었고, 이는 search 도메인 목록 순차대로 요청하지 않고 FQDN 요청이 많아졌다는 것으로 판단됩니다.
@@ -178,6 +178,19 @@ options ndots:2
    - CoreDNS 로의 요청량이 줄다보니 그에 따라 CPU 사용량 및 Latency도 같이 줄었습니다.
 
 ![ndots 2 반영 후 결과](https://github.com/user-attachments/assets/6b480c1b-cd9e-48f1-b7a8-e5d1544a2332)
+
+#### CoreDNS 개수 증가
+1. Request & Response 지표 증가
+
+   - CoreDNS 대수 증가에 따른 자연스러운 현상으로 판단됩니다.
+
+2. conntrack_allowance_exceeded 메트릭이 '0'
+ CoreDNS Latency 감소
+
+3. bw_in_allowance_exceeded 와 bw_out_allowance_exceeded 지표는 CoreDNS 대수 증가에 따라 metric이 변경되지는 않은 것으로 보임
+
+    - 상위 5개 metric 을 확인해보았을 때, 서비스 자체가 데이터가 왔다갔다 하는 로직이 많아 해당 지표가 계속적으로 보이는 것으로 판단됩니다.
+    - 네트워크 대역이 큰 인스턴스로 변경하거나 더 분산시켜 위치시키는 방안으로 가야할 듯 보입니다.
 
 참고 문서
 
