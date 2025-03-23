@@ -150,7 +150,7 @@ spec:
 ndots를 설정한 서비스에 접근해 `/etc/resolv.conf` 파일을 확인해보면 `ndots` 값이 5 -> 2로 변경된 것을 확인할 수 있습니다.
 
 ```bash
-kubectl exec -it <POD_NAME> \
+$ kubectl exec -it <POD_NAME> \
     -n <NAMESPACE> \
     -- cat /etc/resolv.conf
 ```
