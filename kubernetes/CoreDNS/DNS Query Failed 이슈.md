@@ -153,10 +153,7 @@ ndots를 설정한 서비스에 접근해 `/etc/resolv.conf` 파일을 확인해
 $ kubectl exec -it <POD_NAME> \
     -n <NAMESPACE> \
     -- cat /etc/resolv.conf
-```
 
-```bash
-$ cat /etc/resolv.conf
 search default.svc.cluster.local svc.cluster.local cluster.local ap-northeast-2.compute.internal
 nameserver 172.20.0.10
 options ndots:2
