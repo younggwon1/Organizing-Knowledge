@@ -38,7 +38,7 @@
 
 ### 2. Service 의 Type 을 NodePort -> ClusterIP 로 전환하는 과정 (ALB 의 TargetType 을 Instance -> IP 로 전환)
 
-1. ingress 에 다음의 annotation 이고,
+1. Ingress 에 다음의 Annotations 이고,
 
    - `alb.ingress.kubernetes.io/target-type: instance`
 
