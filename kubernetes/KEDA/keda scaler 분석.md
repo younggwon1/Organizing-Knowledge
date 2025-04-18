@@ -6,7 +6,7 @@
 
 > 참고 ) Kubernetes Version 이 1.30 이상일 경우 HPAContainerMetrics feature enabled가 기본 설정이기 때문에 containerName을 작성해야합니다. (1.30 이전 버전에서 containerName을 작성하려면 HPAContainerMetrics를 enabled 해야합니다.)
 
-```
+```yaml
 triggers:
 - type: memory
   metricType: Utilization
