@@ -128,6 +128,13 @@ $ nslookup {Domain} -debug | grep QUESTIONS -A 1
     - {서비스 이름}.{네임스페이스}.svc.cluster.local -> 5번 질의
     - {서비스 이름}.{네임스페이스} -> 2번 질의
 
+따라서 결론은 다음과 같습니다.
+1. `ndots(2)` 로 설정
+2. 동일 네임스페이스에 있을 경우
+    - {서비스 이름} -> 1번 질의
+3. 다른 네임스페이스에 있는 경우
+    - {서비스 이름}.{네임스페이스}.svc.cluster.local -> 1번 질의
+
 ### Kubernetes Workloads 에 ndots를 적용하는 방식
 
 > Workloads 에서 `spec.template.spec` 에 dnsConfig 를 설정합니다.
