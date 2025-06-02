@@ -1,0 +1,86 @@
+# Grafana 대시보드의 쿼리를 Recording Rule로 변환
+      # Total Traffic
+      - record: record:total_traffic_az:rate5m
+        expr: |
+          sum(
+              (
+                traffic:hubble_flows_processed_total:rate5m
+                * on (source_pod, source_ip) group_left(node)
+                pod:source_kube_pod_info_mapping
+                * on (node) group_left(zone)
+                node:kube_node_info_mapping
+              )
+              * on (destination_pod, destination_ip) group_left(node)
+              (
+                pod:destination_kube_pod_info_mapping
+                * on (node) group_left(zone)
+                node:kube_node_info_mapping
+              )
+          ) OR on() vector(0)
+      # Same AZ Traffic
+      - record: record:same_traffic_az:rate5m
+        expr: |
+          sum(
+              ceil(
+                  (
+                    sum(
+                        traffic:hubble_flows_processed_total:rate5m
+                        * on (source_pod, source_ip) group_left(node)
+                        pod:source_kube_pod_info_mapping
+                        * on (node) group_left(zone)
+                        node:kube_node_info_mapping
+                    ) by (destination_pod, source_pod, zone)
+                  )
+                  + on (destination_pod, source_pod, zone) group_left() # By including the zone as a join criterion label, only flows where both the source and destination are in the same zone are summed.
+                  (
+                    sum(
+                        traffic:hubble_flows_processed_total:rate5m
+                        * on (destination_pod, destination_ip) group_left(node)
+                        pod:destination_kube_pod_info_mapping
+                        * on (node) group_left(zone)
+                        node:kube_node_info_mapping
+                    ) by (destination_pod, source_pod, zone)
+                  )
+              ) / 2  # we are divinding because we are summing values in '+on()' function to find the Same AZ traffic
+          )OR on() vector(0)
+      # Cross AZ Traffic
+      - record: record:cross_traffic_az:rate5m
+        expr: |
+          (
+            record:total_traffic_az:rate5m
+          )
+          -
+          (
+            record:same_traffic_az:rate5m
+          )
+      # Traffic per AZ
+      - record: record:traffic_per_az:rate5m
+        expr: |
+          sum by (source_zone, destination_zone) (
+            traffic:hubble_flows_processed_total:rate5m
+            * on (source_pod, source_ip) group_left(node)
+            pod:source_kube_pod_info_mapping
+            * on (node) group_left(source_zone)
+            node:source_kube_node_info_mapping
+            * on (destination_pod, destination_ip) group_left(node)
+            pod:destination_kube_pod_info_mapping
+            * on (node) group_left(destination_zone)
+            node:destination_kube_node_info_mapping
+          )
+      # Traffic per Pod AZ
+      - record: record:traffic_per_pod_az:rate5m
+        expr: |
+          sum(
+            (
+              traffic:hubble_flows_processed_total:rate5m
+              * on (source_pod, source_ip) group_left(node)
+              pod:source_kube_pod_info_mapping
+              * on (node) group_left(source_zone)
+              node:source_kube_node_info_mapping
+              * on (destination_pod, destination_ip) group_left(node)
+              pod:destination_kube_pod_info_mapping
+              * on (node) group_left(destination_zone)
+              node:destination_kube_node_info_mapping
+            )
+          )
+          by (source_pod, destination_pod, source_zone, destination_zone)
