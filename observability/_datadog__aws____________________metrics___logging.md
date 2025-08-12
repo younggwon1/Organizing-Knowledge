@@ -143,7 +143,7 @@
         1. [`Datadog-AWS integration`](https://docs.datadoghq.com/integrations/amazon_web_services/)에서 AWS 계정을 선택해 로그를 수집할 AWS 계정을 선택하고 로그 수집 탭을 클릭합니다.
         2. 이전에 생성한 Lambda Function (Datadog Lambda Forwarder 용)의 ARN을 입력하고 추가를 클릭합니다.
         3. 로그를 수집하려는 서비스를 선택하고 저장을 클릭합니다. 특정 서비스에서 로그 수집을 중지하려면 로그를 선택 해제합니다.
-            1. 참고: [Subscription Filters](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/SubscriptionFilters)는 Datadog Forwarder에 의해 자동으로 생성되지 않습니다. 따라서 로그 그룹에서 직접 생성해야합니다.
+            1. 참고: [Subscription Filters](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/SubscriptionFilters)는 Datadog Forwarder에 의해 CloudWatch 로그 그룹에 자동으로 생성되며 형식에 따라 이름이 지정됩니다.
         4. 이 초기 설정 후 몇 분 내에 Datadog [로그 탐색기](https://app.datadoghq.com/logs)에 AWS 로그가 나타납니다.
         - (참고)
             1. 여러 지역의 로그를 보유하고 있는 경우 해당 지역에 Lambda Function을 추가로 생성해야합니다.
