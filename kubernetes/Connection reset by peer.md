@@ -15,32 +15,22 @@ Client Service -> Server Service 연결에서 한 쪽만 연결되어 있는 좀
 
 정상적인 TCP 3-way Handshake가 진행된 후, 서버에서 RST 패킷을 전송하여 연결을 강제로 종료하였다. RST 패킷은 연결의 문제나 예외적인 상황에서 전송되므로 해당 연결에 문제가 발생했음을 알 수 있다.
 
-
-
 ## 1. 상황
 
-~~~
+```
 recvAddress(..) failed: Connection reset by peer; nested exception is io.netty.channel.unix.Errors$NativeIoException: recvAddress(..) failed: Connection reset by peer
-~~~
+```
 
 A Service -> B Service 시, Client 단(A Service) 에서 **Connection reset by peer** 에러가 발생.
-
 - Client 쪽에서 `Connection reset by peer` 예외가 발생했지만, Server 단에서는 어떤 예외도 잡아낼 수 없었다.
-
-
 
 ## 2. 해결
 
-webclient idle timeout 설정 등의 조정이 필요.
-
-- Target Service 의 idle time, 초당 요청 수 등을 확인하여 webclient idle timeout 설정 등의 조정이 필요하다.
-
-[#1774 Connection reset by peer exception](https://github.com/reactor/reactor-netty/issues/1774)
-
-
+Webclient Idle Timeout 설정 등의 조정이 필요.
+- Target Service 의 Idle Time, 초당 요청 수 등을 확인하여 Webclient Idle Timeout 설정 등의 조정이 필요하다.
+- [#1774 Connection reset by peer exception](https://github.com/reactor/reactor-netty/issues/1774)
 
 ### 참고 문서
-
 - <https://yangbongsoo.tistory.com/30>
 - <https://lasel.kr/archives/740>
 - <https://alden-kang.tistory.com/48>
