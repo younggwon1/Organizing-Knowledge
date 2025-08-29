@@ -95,7 +95,10 @@ dig +trace <DOMAIN>
 
 2. max_concurrent : none (default) -> 1000
 
-- 다음과 같이 반영
+- CoreDNS가 동시에 처리할 수 있는 요청 수의 최대 한도
+- 리소스와 트래픽 양 고려
+    - 너무 낮게 설정하면 요청이 지연되거나 실패할 수 있음
+    - 너무 높게 설정하면 CPU/메모리를 과도하게 사용할 수 있음
 
 3. lameduck
 
