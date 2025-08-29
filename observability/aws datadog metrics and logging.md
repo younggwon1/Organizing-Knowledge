@@ -155,9 +155,9 @@
             1. (사전 작업) CloudWatch Logs로 AWS 리소스 로그를 게시합니다.
             2. CloudWatch 로그 그룹에서 로그 수집
                 1. 콘솔 또는 CloudFormation 을 통해 수동으로 트리거를 설정합니다.
-                2. https://docs.datadoghq.com/ko/logs/guide/send-aws-services-logs-with-the-datadog-lambda-function/?tab=cloudformation#%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C%EC%99%80%EC%B9%98cloudwatch-%EB%A1%9C%EA%B7%B8-%EA%B7%B8%EB%A3%B9%EC%97%90%EC%84%9C-%EB%A1%9C%EA%B7%B8-%EC%88%98%EC%A7%91
+                2. [Collecting logs from CloudWatch log group](https://docs.datadoghq.com/logs/guide/send-aws-services-logs-with-the-datadog-lambda-function/?tab=awsconsole#collecting-logs-from-cloudwatch-log-group)
         2. S3 버킷에서 로그를 수집하는 경우
-            - https://docs.datadoghq.com/ko/logs/guide/send-aws-services-logs-with-the-datadog-lambda-function/?tab=cloudformation#s3-%EB%B2%84%ED%82%B7%EC%97%90%EC%84%9C-%EB%A1%9C%EA%B7%B8-%EC%88%98%EC%A7%91
+            1. [Collecting logs from S3 buckets](https://docs.datadoghq.com/logs/guide/send-aws-services-logs-with-the-datadog-lambda-function/?tab=awsconsole#collecting-logs-from-s3-buckets)
 
 참고 문서
 
