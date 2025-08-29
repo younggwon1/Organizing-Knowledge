@@ -97,9 +97,15 @@ dig +trace <DOMAIN>
 
 - 다음과 같이 반영
 
+3. lameduck
+
+- CoreDNS 개수를 줄이거나 Restart 할 때 Graceful Shutdown 하기 위해 CoreDNS configmap 에 lameduck 이라는 설정으로 조절
+- CoreDNS terminationGracePeriodSeconds이 30s 로 되어 있기 때문에 이를 고려하여 lameduck도 30s 로 설정
+- https://coredns.io/plugins/health/
+
 ```
 ## AS-IS
-> cache : 30s, max_concurrent : none
+> cache : 30s, max_concurrent : none, lameduck : 5s
 .:53 {
     errors
     health {
@@ -119,7 +125,7 @@ dig +trace <DOMAIN>
 }
 
 ## TO-BE
-> cache : 60s, max_concurrent : 1000
+> cache : 60s, max_concurrent : 1000, lameduck : 30s
 .:53 {
     errors
     health {
@@ -140,11 +146,6 @@ dig +trace <DOMAIN>
     loadbalance
 }
 ```
-
-3. lameduck
-
-- CoreDNS 개수를 줄이거나 Restart 할 때 Graceful Shutdown 하기 위해 CoreDNS configmap 에 lameduck 이라는 설정으로 조절
-- https://coredns.io/plugins/health/
 
 ### Monitoring 고도화
 
