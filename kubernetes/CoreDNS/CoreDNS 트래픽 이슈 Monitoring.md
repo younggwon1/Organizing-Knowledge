@@ -10,11 +10,11 @@
 
 무작정 Pod 개수를 늘리는 것이 이슈 대응에 필요한 부분이기는 하지만, 결국 원인을 명확히 파악해야한다고 생각하여 모니터링을 시도하였고, 모니터링 시스템 구축은 다음의 문서를 기반으로 진행했습니다.
 
-- https://docs.aws.amazon.com/ko_kr/eks/latest/best-practices/monitoring_eks_workloads_for_network_performance_issues.html
+- [네트워크 성능 문제에 대한 EKS 워크로드 모니터링](https://docs.aws.amazon.com/ko_kr/eks/latest/best-practices/monitoring_eks_workloads_for_network_performance_issues.html)
 
 ### 사전 작업
 
-모니터링할 NODE에 **Elastic Network Adapter** 활성화가 되어 있어야 모니터링이 가능합니다.
+모니터링할 Node에 **Elastic Network Adapter** 활성화가 되어 있어야 모니터링이 가능합니다.
 
 ```
 $ ethtool -i eth0
@@ -51,7 +51,7 @@ Prometheus ethtool Exporter 배포 시 [prometheus-ethtool-exporter](https://raw
 - **--collector.ethtool.metrics-include=^(bw_in_allowance_exceeded|bw_out_allowance_exceeded|conntrack_allowance_exceeded|linklocal_allowance_exceeded|pps_allowance_exceeded)$**
   - ethtool collector가 수집할 메트릭을 지정하는 정규표현식
 
-```
+```yaml
 spec:
   template:
     spec:
