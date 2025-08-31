@@ -89,7 +89,7 @@ dig +trace <DOMAIN>
 
 ### CoreDNS를 Restart 또는 Scale In 할 경우 DNS 이슈 발생에 대한 개선 방안
 
-1. cache : 30 (default) -> 60
+1. cacheTTL : 30 (default) -> 60
 
 - 너무 짧으면 금방 캐시가 휘발되어 부하를 유발함
 
