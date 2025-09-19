@@ -51,10 +51,11 @@ Linux
 - Linux 커널 및 분산 시스템 등 저수준 시스템 개발 경험
 
 GPU
-- 다양한 GPU 서버 구축 및 GPU 플랫폼 구축 및 운영 ( Nvidia, DGX, Slurm, CUDA, etc)
+- 다양한 GPU 서버 구축 및 GPU 플랫폼 구축 및 운영 (Nvidia, DGX, Slurm, CUDA, etc)
 - MIG 지원 GPU를 위한 동적 GPU 스케줄러 작성 경험
 - NUMA 또는 PCIE 토폴로지 또는 NVLink/NVSwitch에 대한 하드웨어 토폴로지 관리 및 최적화에 대한 지식
 - GPU 팜이나 GPU 클러스터를 구축하고 운영하는 데 있어 실질적인 실무 경험
+- Kubernetes, Ray, Modal, RunPod, LambdaLabs 등을 활용한 GPU 오케스트레이션 경험
 
 Observability
 - 대규모 서비스 대상의 Observability (Metrics/Events/Logs/Traces 와 Alert, APM) 시스템 개발 / 운영
