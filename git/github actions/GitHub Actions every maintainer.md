@@ -35,6 +35,70 @@
 
 - [github/codeql-action](https://github.com/github/codeql-action)
 
+```yaml
+name: "Golang Security Scan"
+
+# Run workflow each time code is pushed to your repository and on a schedule.
+# The scheduled workflow runs every at 00:00 on Sunday UTC time.
+on:
+  push:
+  schedule:
+  - cron: '0 0 * * 0'
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    env:
+      GO111MODULE: on
+    steps:
+      - name: Checkout Source
+        uses: actions/checkout@v5
+        if: ${{ github.actor != 'dependabot[bot]' }}
+      - name: Run Gosec Security Scanner
+        if: ${{ github.actor != 'dependabot[bot]' }}
+        uses: securego/gosec@v2.22.9
+        with:
+          # we let the report trigger content trigger a failure using the GitHub Security features.
+          args: '-no-fail -fmt sarif -out results.sarif ./...'
+      - name: Upload SARIF file
+        if: ${{ github.actor != 'dependabot[bot]' }}
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          # Path to SARIF file relative to the root of the repository
+          sarif_file: results.sarif
+```
+
+```yaml
+name: "Java/Kotlin Security Scan"
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: '0 0 * * 0' # 매주 일요일 00:00 UTC
+
+jobs:
+  codeql:
+    name: Analyze
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: java # Kotlin도 자동으로 Java 분석기에 포함됩니다
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v3
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+```
+
+
 ## 9. pluto
 
 > Detect Deprecated API
