@@ -117,16 +117,16 @@ Kubernetes에서 Compressible한 resource 중 대표적인 것은 바로 CPU이�
 
 |                  | Pod Resource 설정 | **우선순위**(높을수록 오래 살아남음) |
 | ---------------- | ----------------- | ------------------------------------ |
-| BestEffort Class | 설정하지 않음     | 3                                    |
+| BestEffort Class | 설정하지 않음        | 3                                    |
 | Burstable Class  | Request < Limit   | 2                                    |
 | Guranteed Class  | Request == Limit  | 1                                    |
 
 ### 참고 문서
 
-[Kubernetes Resource and QoS Concept](https://www.getoutsidedoor.com/2020/11/15/kubernetes-resource-and-qos/)
+[1]. [Kubernetes Resource and QoS Concept](https://www.getoutsidedoor.com/2020/11/15/kubernetes-resource-and-qos/)
 
-[리소스 요청이 포함된 파드를 스케줄링하는 방법](https://kubernetes.io/ko/docs/concepts/configuration/manage-resources-containers/#%EB%A6%AC%EC%86%8C%EC%8A%A4-%EC%9A%94%EC%B2%AD%EC%9D%B4-%ED%8F%AC%ED%95%A8%EB%90%9C-%ED%8C%8C%EB%93%9C%EB%A5%BC-%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95)
+[2]. [리소스 요청이 포함된 파드를 스케줄링하는 방법](https://kubernetes.io/ko/docs/concepts/configuration/manage-resources-containers/#%EB%A6%AC%EC%86%8C%EC%8A%A4-%EC%9A%94%EC%B2%AD%EC%9D%B4-%ED%8F%AC%ED%95%A8%EB%90%9C-%ED%8C%8C%EB%93%9C%EB%A5%BC-%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95)
 
-[쿠버네티스가 리소스 요청 및 제한을 적용하는 방법](https://kubernetes.io/ko/docs/concepts/configuration/manage-resources-containers/#how-pods-with-resource-limits-are-run)
+[3]. [쿠버네티스가 리소스 요청 및 제한을 적용하는 방법](https://kubernetes.io/ko/docs/concepts/configuration/manage-resources-containers/#how-pods-with-resource-limits-are-run)
 
-[Pod CPU/Memory 리소스 최적화하기 (VPA 및 Kubecost 추천로직 분석)](https://devocean.sk.com/blog/techBoardDetail.do?ID=164786&boardType=techBlog#none)
+[4]. [Pod CPU/Memory 리소스 최적화하기 (VPA 및 Kubecost 추천로직 분석)](https://devocean.sk.com/blog/techBoardDetail.do?ID=164786&boardType=techBlog#none)
