@@ -25,6 +25,13 @@
 ### [2]. Docker Image
 - [컨테이너가 뜨는 순간, 이미지가 “내가 만든 것”인지 커널이 직접 증명한다.](https://kr.linkedin.com/posts/victor-maltsev_slsa-sigstore-sbom-activity-7368817518855077888-PT8t)
 
-### [3]. Network
+### [3]. GitOps
+- [GitHub Actions 도입기(1): ARC 구축 및 Container Jobs 지원](https://channel.io/ko/team/blog/articles/GitHub-Actions-%EB%8F%84%EC%9E%85%EA%B8%B01-ARC-%EA%B5%AC%EC%B6%95-%EB%B0%8F-Container-Jobs-%EC%A7%80%EC%9B%90-55fa0670)
+- [GitHub Actions 도입기(2): 실제 운영 및 트러블슈팅](https://channel.io/ko/team/blog/articles/GitHub-Actions-%EB%8F%84%EC%9E%85%EA%B8%B02-%EC%8B%A4%EC%A0%9C-%EC%9A%B4%EC%98%81-%EB%B0%8F-%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%85-29c9a273)
+
+### [4]. Network
 - [Apache HttpClient Connection 관리하기 (TIME_WAIT & CLOSE_WAIT 문제)](https://velog.io/@jundragon/JAVA-Apache-HttpClient-Connection-Management)
 - [TCP/HTTP 타임아웃(Timeout), 이 글 하나로 개념 완전 정복](https://devpanpan.tistory.com/118)
+
+### [5]. Observability
+- [Key metrics for CoreDNS monitoring](https://www.datadoghq.com/blog/coredns-metrics/#throughput-metrics)
