@@ -21,6 +21,8 @@
 - [클라우드 네이티브 보안 개요](https://kubernetes.io/ko/docs/concepts/security/overview/)
 - [내부 플랫폼에 AIOps 도입기: 알람 홍수에서 예측형 복구까지, MTTR 31% 단축](https://kr.linkedin.com/posts/victor-maltsev_devops-aiops-platformengineering-activity-7359468223748022273-vvs3)
 - [토스증권의 수 천개 실시간 데이터 파이프라인 운영방법 #2: MSA 환경 Observability 높이기](https://toss.tech/article/MSA-observability)
+- [Amazon EKS 모범 사례 가이드](https://docs.aws.amazon.com/ko_kr/eks/latest/best-practices/introduction.html)
+- [AWS Prescriptive Guidance Patterns](https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/welcome.html)
 
 ### [2]. Docker Image
 - [컨테이너가 뜨는 순간, 이미지가 “내가 만든 것”인지 커널이 직접 증명한다.](https://kr.linkedin.com/posts/victor-maltsev_slsa-sigstore-sbom-activity-7368817518855077888-PT8t)
@@ -35,3 +37,7 @@
 
 ### [5]. Observability
 - [Key metrics for CoreDNS monitoring](https://www.datadoghq.com/blog/coredns-metrics/#throughput-metrics)
+
+### [6]. FinOps
+- [Amazon EKS 클러스터를 비용 효율적으로 오토스케일링하기](https://aws.amazon.com/ko/blogs/tech/amazon-eks-cluster-auto-scaling-karpenter-bp/)
+- [우아한 Cloud FinOps 여정](https://techblog.woowahan.com/22855/)
