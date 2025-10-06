@@ -1,7 +1,7 @@
 # 읽어볼만한 Article 모음
 
 ### [1]. Kubernetes
-- [Container의 격리된 환경의 의미][https://velog.io/@rookie0031/Container%EB%9E%80-%EB%8F%84%EB%8C%80%EC%B2%B4-%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C]
+- [Container의 격리된 환경의 의미](https://velog.io/@rookie0031/Container%EB%9E%80-%EB%8F%84%EB%8C%80%EC%B2%B4-%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C)
 - [Pod와 Container의 차이](https://velog.io/@rookie0031/Pod%EC%99%80-Container%EC%9D%98-%EC%B0%A8%EC%9D%B4-8mt17k1x)
 - [쿠버네티스가 쉬워지는 컨테이너 이야기 — cgroup, cpu편](https://medium.com/@7424069/%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4%EA%B0%80-%EC%89%AC%EC%9B%8C%EC%A7%80%EB%8A%94-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88-%EC%9D%B4%EC%95%BC%EA%B8%B0-cgroup-cpu%ED%8E%B8-c8f1e2208168)
 - [쿠버네티스가 쉬워지는 컨테이너 이야기 — memory편](https://medium.com/@7424069/%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4%EA%B0%80-%EC%89%AC%EC%9B%8C%EC%A7%80%EB%8A%94-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88-%EC%9D%B4%EC%95%BC%EA%B8%B0-memory%ED%8E%B8-62cafabfd160)
