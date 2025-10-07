@@ -23,6 +23,7 @@
 - [토스증권의 수 천개 실시간 데이터 파이프라인 운영방법 #2: MSA 환경 Observability 높이기](https://toss.tech/article/MSA-observability)
 - [Amazon EKS 모범 사례 가이드](https://docs.aws.amazon.com/ko_kr/eks/latest/best-practices/introduction.html)
 - [AWS Prescriptive Guidance Patterns](https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/welcome.html)
+- [Amazon EKS, 클러스터 업그레이드의 일부로 업그레이드 인사이트 검사 시행](https://docs.aws.amazon.com/eks/latest/userguide/update-cluster.html#update-cluster-control-plane)
 
 ### [2]. Docker Image
 - [컨테이너가 뜨는 순간, 이미지가 “내가 만든 것”인지 커널이 직접 증명한다.](https://kr.linkedin.com/posts/victor-maltsev_slsa-sigstore-sbom-activity-7368817518855077888-PT8t)
