@@ -27,6 +27,7 @@
 
 ### [2]. Docker Image
 - [컨테이너가 뜨는 순간, 이미지가 “내가 만든 것”인지 커널이 직접 증명한다.](https://kr.linkedin.com/posts/victor-maltsev_slsa-sigstore-sbom-activity-7368817518855077888-PT8t)
+- [Docker 실행 시, Entrypoint에서 exec 명령어를 사용하는 이유](https://kr.linkedin.com/posts/gwonsoolee_entrypoint%EC%97%90%EC%84%9C-exec-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0-activity-7203018882406600704-fi6f)
 
 ### [3]. GitOps
 - [GitHub Actions 도입기(1): ARC 구축 및 Container Jobs 지원](https://channel.io/ko/team/blog/articles/GitHub-Actions-%EB%8F%84%EC%9E%85%EA%B8%B01-ARC-%EA%B5%AC%EC%B6%95-%EB%B0%8F-Container-Jobs-%EC%A7%80%EC%9B%90-55fa0670)
