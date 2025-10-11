@@ -35,6 +35,7 @@
 ### [3]. GitOps
 - [GitHub Actions 도입기(1): ARC 구축 및 Container Jobs 지원](https://channel.io/ko/team/blog/articles/GitHub-Actions-%EB%8F%84%EC%9E%85%EA%B8%B01-ARC-%EA%B5%AC%EC%B6%95-%EB%B0%8F-Container-Jobs-%EC%A7%80%EC%9B%90-55fa0670)
 - [GitHub Actions 도입기(2): 실제 운영 및 트러블슈팅](https://channel.io/ko/team/blog/articles/GitHub-Actions-%EB%8F%84%EC%9E%85%EA%B8%B02-%EC%8B%A4%EC%A0%9C-%EC%9A%B4%EC%98%81-%EB%B0%8F-%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%85-29c9a273)
+- [Argo CD 안티 패턴 모음 30개](https://kr.linkedin.com/posts/jeeunglee_argo-cd%EC%97%90%EC%84%9C-%EC%9E%90%EC%A3%BC-%EB%B3%B4%EC%9D%B4%EB%8A%94-%EC%9E%98%EB%AA%BB%EB%90%9C-%ED%8C%A8%ED%84%B4%EA%B3%BC-%EA%B4%80%ED%96%89-30%EA%B0%9C-activity-7367319835673776130-UJfs)
 
 ### [4]. Network
 - [Apache HttpClient Connection 관리하기 (TIME_WAIT & CLOSE_WAIT 문제)](https://velog.io/@jundragon/JAVA-Apache-HttpClient-Connection-Management)
