@@ -19,6 +19,7 @@
 - [Istio 도입후 503 conenction refused 에러 트러블 슈팅](https://velog.io/@rookie0031/Istio-%EB%8F%84%EC%9E%85%ED%9B%84-503-conenction-refused-%EC%97%90%EB%9F%AC-%ED%8A%B8%EB%9F%AC%EB%B8%94-%EC%8A%88%ED%8C%85)
 - [Kubernetes DNS: FQDN과 ndots의 동작 방식 정리](https://lakescript.net/entry/Kubernetes-DNS-FQDN%EA%B3%BC-ndots%EC%9D%98-%EB%8F%99%EC%9E%91-%EB%B0%A9%EC%8B%9D-%EC%A0%95%EB%A6%AC)
 - [Kubernetes Troubleshooting: Common Errors and Fixes](https://www.linkedin.com/posts/kunal-dhole-32a11a112_kubernetes-devops-cloudcomputing-activity-7376334663533006850-6zsj)
+- [Production 환경에서 고려해야 할 Kubernetes 이슈 & 트러블슈팅](https://velog.io/@tedigom/Production-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-%EA%B3%A0%EB%A0%A4%ED%95%B4%EC%95%BC-%ED%95%A0Kubernetes-%EC%9D%B4%EC%8A%88-%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%85)
 - [[if(kakaoAI)2024] 카카오페이증권의 Kubernetes 지능형 리소스 최적화 (feat. Dr.Pym Project 공유)](https://tech.kakaopay.com/post/ifkakao2024-dr-pym-project/)
 - [KEP-5295: Introducing KYAML, a safer, less ambiguous YAML subset / encoding](https://github.com/kubernetes/enhancements/blob/master/keps/sig-cli/5295-kyaml/README.md?trk=public_post_comment-text)
 - [클라우드 네이티브 보안 개요](https://kubernetes.io/ko/docs/concepts/security/overview/)
