@@ -44,9 +44,12 @@
 - [Apache HttpClient Connection 관리하기 (TIME_WAIT & CLOSE_WAIT 문제)](https://velog.io/@jundragon/JAVA-Apache-HttpClient-Connection-Management)
 - [TCP/HTTP 타임아웃(Timeout), 이 글 하나로 개념 완전 정복](https://devpanpan.tistory.com/118)
 
-### [5]. Observability
+### [5]. Linux
+- [리눅스 커널 관련 강의 유튜브](https://www.youtube.com/playlist?list=PLRrUisvYoUw_bFoK0ahLy9MHfBgBZJyz4)
+
+### [6]. Observability
 - [Key metrics for CoreDNS monitoring](https://www.datadoghq.com/blog/coredns-metrics/#throughput-metrics)
 
-### [6]. FinOps
+### [7]. FinOps
 - [Amazon EKS 클러스터를 비용 효율적으로 오토스케일링하기](https://aws.amazon.com/ko/blogs/tech/amazon-eks-cluster-auto-scaling-karpenter-bp/)
 - [우아한 Cloud FinOps 여정](https://techblog.woowahan.com/22855/)
