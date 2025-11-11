@@ -24,6 +24,7 @@
 - [Kubernetes Pod Scheduling: Balancing Cost and Resilience](https://cast.ai/blog/kubernetes-pod-scheduling-balancing-cost-and-resilience/)
 - [17 Kubernetes Best Practices Every Developer Should Know](https://spacelift.io/blog/kubernetes-best-practices)
 - [[if(kakaoAI)2024] 카카오페이증권의 Kubernetes 지능형 리소스 최적화 (feat. Dr.Pym Project 공유)](https://tech.kakaopay.com/post/ifkakao2024-dr-pym-project/)
+- [쿠버네티스 워크로드 CronJob 작성시 유의할 점 - 기초가 중요한 이유](https://1ocate.tistory.com/9)
 - [KEP-5295: Introducing KYAML, a safer, less ambiguous YAML subset / encoding](https://github.com/kubernetes/enhancements/blob/master/keps/sig-cli/5295-kyaml/README.md?trk=public_post_comment-text)
 - [클라우드 네이티브 보안 개요](https://kubernetes.io/ko/docs/concepts/security/overview/)
 - [내부 플랫폼에 AIOps 도입기: 알람 홍수에서 예측형 복구까지, MTTR 31% 단축](https://kr.linkedin.com/posts/victor-maltsev_devops-aiops-platformengineering-activity-7359468223748022273-vvs3)
