@@ -2,6 +2,7 @@
 
 ### [0]. AWS
 - [혹시 S3에 ‘연/월/일’로 나누어 저장하고 있나요? 파티셔닝 방식의 함정!](https://kr.linkedin.com/posts/hyunsoo-ryan-lee_%ED%98%B9%EC%8B%9C-s3%EC%97%90-%EC%97%B0%EC%9B%94%EC%9D%BC%EB%A1%9C-%EB%82%98%EB%88%84%EC%96%B4-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B3%A0-%EC%9E%88%EB%82%98%EC%9A%94-%ED%8C%8C%ED%8B%B0%EC%85%94%EB%8B%9D-%EB%B0%A9%EC%8B%9D%EC%9D%98-activity-7382318323545468928-vM1Q)
+- [Cloudflare 및 Cloudfront로 Multi-CDN 구성하기](https://jinsungh.notion.site/Cloudflare-Cloudfront-Multi-CDN-28fcb8fc0fde8047836bdfde2d281cb7)
 
 ### [1]. Kubernetes
 - [Container의 격리된 환경의 의미](https://velog.io/@rookie0031/Container%EB%9E%80-%EB%8F%84%EB%8C%80%EC%B2%B4-%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C)
