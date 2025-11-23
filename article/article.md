@@ -4,6 +4,8 @@
 - [혹시 S3에 ‘연/월/일’로 나누어 저장하고 있나요? 파티셔닝 방식의 함정!](https://kr.linkedin.com/posts/hyunsoo-ryan-lee_%ED%98%B9%EC%8B%9C-s3%EC%97%90-%EC%97%B0%EC%9B%94%EC%9D%BC%EB%A1%9C-%EB%82%98%EB%88%84%EC%96%B4-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B3%A0-%EC%9E%88%EB%82%98%EC%9A%94-%ED%8C%8C%ED%8B%B0%EC%85%94%EB%8B%9D-%EB%B0%A9%EC%8B%9D%EC%9D%98-activity-7382318323545468928-vM1Q)
 - [Cloudflare 및 Cloudfront로 Multi-CDN 구성하기](https://jinsungh.notion.site/Cloudflare-Cloudfront-Multi-CDN-28fcb8fc0fde8047836bdfde2d281cb7)
 - [AWS NAT Gateway now supports regional availability](https://aws.amazon.com/ko/about-aws/whats-new/2025/11/aws-nat-gateway-regional-availability/)
+- [Amazon EC2 Auto Scaling은 이제 인스턴스 새로 고침을 통해 루트 볼륨 교체를 지원합니다.](https://aws.amazon.com/ko/about-aws/whats-new/2025/11/amazon-ec2-auto-scaling-root-volume-replacement/)
+- [Recycle Bin adds support for Amazon EBS Volumes](https://aws.amazon.com/ko/about-aws/whats-new/2025/11/recycle-bin-support-amazon-ebs-volumes/)
 
 ### [1]. Kubernetes
 - [Container의 격리된 환경의 의미](https://velog.io/@rookie0031/Container%EB%9E%80-%EB%8F%84%EB%8C%80%EC%B2%B4-%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C)
@@ -34,6 +36,7 @@
 - [Amazon EKS 모범 사례 가이드](https://docs.aws.amazon.com/ko_kr/eks/latest/best-practices/introduction.html)
 - [AWS Prescriptive Guidance Patterns](https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/welcome.html)
 - [Amazon EKS, 클러스터 업그레이드의 일부로 업그레이드 인사이트 검사 시행](https://docs.aws.amazon.com/eks/latest/userguide/update-cluster.html#update-cluster-control-plane)
+- [Amazon EKS에 대한 분할 비용 할당 데이터, Kubernetes 레이블 지원](https://aws.amazon.com/ko/about-aws/whats-new/2025/10/split-cost-allocation-data-amazon-eks-kubernetes-labels/)
 
 ### [2]. Docker Image
 - [컨테이너가 뜨는 순간, 이미지가 “내가 만든 것”인지 커널이 직접 증명한다.](https://kr.linkedin.com/posts/victor-maltsev_slsa-sigstore-sbom-activity-7368817518855077888-PT8t)
