@@ -7,6 +7,7 @@
 - [Amazon EC2 Auto Scaling은 이제 인스턴스 새로 고침을 통해 루트 볼륨 교체를 지원합니다.](https://aws.amazon.com/ko/about-aws/whats-new/2025/11/amazon-ec2-auto-scaling-root-volume-replacement/)
 - [Recycle Bin adds support for Amazon EBS Volumes](https://aws.amazon.com/ko/about-aws/whats-new/2025/11/recycle-bin-support-amazon-ebs-volumes/)
 - [Build scalable REST APIs using Amazon API Gateway private integration with Application Load Balancer](https://aws.amazon.com/ko/blogs/compute/build-scalable-rest-apis-using-amazon-api-gateway-private-integration-with-application-load-balancer/)
+- [The 7 Layers of Cloud Security Nobody Told You About](https://www.linkedin.com/posts/yuvraj-johari-b55179210_cloudsecurity-cybersecurity-devsecops-activity-7398918391555731456-Xtpd)
 
 ### [1]. Kubernetes
 - [Container의 격리된 환경의 의미](https://velog.io/@rookie0031/Container%EB%9E%80-%EB%8F%84%EB%8C%80%EC%B2%B4-%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C)
