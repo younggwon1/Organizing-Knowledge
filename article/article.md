@@ -39,6 +39,7 @@
 - [AWS Prescriptive Guidance Patterns](https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/welcome.html)
 - [Amazon EKS, 클러스터 업그레이드의 일부로 업그레이드 인사이트 검사 시행](https://docs.aws.amazon.com/eks/latest/userguide/update-cluster.html#update-cluster-control-plane)
 - [Amazon EKS에 대한 분할 비용 할당 데이터, Kubernetes 레이블 지원](https://aws.amazon.com/ko/about-aws/whats-new/2025/10/split-cost-allocation-data-amazon-eks-kubernetes-labels/)
+- [Istio has deprecated its In-Cluster Operator](https://istio.io/latest/blog/2024/in-cluster-operator-deprecation-announcement/)
 
 ### [2]. Docker Image
 - [컨테이너가 뜨는 순간, 이미지가 “내가 만든 것”인지 커널이 직접 증명한다.](https://kr.linkedin.com/posts/victor-maltsev_slsa-sigstore-sbom-activity-7368817518855077888-PT8t)
